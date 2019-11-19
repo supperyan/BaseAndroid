@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">应用</string>
+
+    <string name="loading">加载中。。。</string>
+    <string name="back_exit_tips">再按一次返回键退出应用</string>
+
+</resources>

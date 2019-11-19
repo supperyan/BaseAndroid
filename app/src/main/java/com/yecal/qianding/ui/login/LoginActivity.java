@@ -81,8 +81,6 @@ public class LoginActivity extends BaseActivity {
                 toLogin();
                 break;
             case R.id.login_regist:
-                RegistActivity.start(LoginActivity.this);
-                break;
             case R.id.login_regist_now:
                 RegistActivity.start(LoginActivity.this);
                 break;
@@ -90,28 +88,29 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void toLogin() {
-        String RegistrationID = JPushInterface.getRegistrationID(LoginActivity.this);
-        new MemberModel().login(StringUtil.getEditString(account), StringUtil.getEditString(password), RegistrationID, new BaseModel.BaseModelIB() {
-            @Override
-            public void StartOp() {
-                showLoading();
-            }
-
-            @Override
-            public void successful(Object o) {
-                hideLoading();
-                MemberModel model = (MemberModel) o;
-                DatasStore.setCurMember(model);
-                finish();
-                MainActivity.start(LoginActivity.this);
-            }
-
-            @Override
-            public void failed(ResultsModel resultsModel) {
-                hideLoading();
-                ToastUtils.showShort(resultsModel.getErrorMsg());
-            }
-        });
+        MainActivity.start(LoginActivity.this);
+//        String RegistrationID = JPushInterface.getRegistrationID(LoginActivity.this);
+//        new MemberModel().login(StringUtil.getEditString(account), StringUtil.getEditString(password), RegistrationID, new BaseModel.BaseModelIB() {
+//            @Override
+//            public void StartOp() {
+//                showLoading();
+//            }
+//
+//            @Override
+//            public void successful(Object o) {
+//                hideLoading();
+//                MemberModel model = (MemberModel) o;
+//                DatasStore.setCurMember(model);
+//                finish();
+//                MainActivity.start(LoginActivity.this);
+//            }
+//
+//            @Override
+//            public void failed(ResultsModel resultsModel) {
+//                hideLoading();
+//                ToastUtils.showShort(resultsModel.getErrorMsg());
+//            }
+//        });
     }
 
     public static void start(Context context) {

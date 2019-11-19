@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'org.greenrobot.greendao' // apply plugin
 
 def config = rootProject.ext.configuration
 def libs = rootProject.ext.library
@@ -34,9 +33,9 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('E:/debug.keystore')
+            storeFile file('E:/release.jks')
             storePassword 'android'
-            keyAlias 'androiddebugkey'
+            keyAlias 'yanchao'
             keyPassword 'android'
         }
     }
@@ -90,7 +89,6 @@ dependencies {
     compile "com.android.support:appcompat-v7:${libs.supportLibrary}"
     compile "com.android.support:recyclerview-v7:${libs.supportLibrary}"
     compile "com.github.bumptech.glide:glide:${libs.glide}"     //  图片加载
-    annotationProcessor "com.github.bumptech.glide:compiler:${libs.glide}"      //Glide
     compile "com.google.code.gson:gson:${libs.gson}"            //  gson解析
     compile 'com.android.support:multidex:1.0.1'                //  解决65535
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'    //  网络加载框架
@@ -98,7 +96,6 @@ dependencies {
     compile 'cn.jiguang.sdk:jpush:3.4.0'                        //  此处以JPush 3.1.1 版本为例。
     compile 'cn.jiguang.sdk:jcore:2.2.2'                        //  此处以JCore 1.1.9 版本为例。
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'  //  优雅简单的TabLayout
-    compile 'com.blankj:utilcode:1.25.9'                        //  工具类
-    compile 'org.greenrobot:greendao:3.2.2'                     //  SQLite数据库
+    compile 'com.blankj:utilcode:1.20.0'                        //  工具类
     testCompile 'junit:junit:4.12'
 }

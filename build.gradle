@@ -11,7 +11,7 @@ ext {
     ]
 
     library = [
-            supportLibrary: '26.1.0',
+            supportLibrary: '27.1.0',
             gson          : '2.8.6',
             butterknife   : '8.5.1',
             glide         : '3.7.0'

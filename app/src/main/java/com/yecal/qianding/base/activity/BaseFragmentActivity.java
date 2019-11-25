@@ -4,11 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-
 import com.yecal.qianding.base.fragment.BaseFragment;
-
-import junit.framework.Assert;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +39,6 @@ public abstract class BaseFragmentActivity extends BaseActivity {
 
         _fragmentManager = getSupportFragmentManager();
         _fragmentClasses = this.fragmentClasses();
-        Assert.assertTrue("_fragmentClasses.size() == 0", _fragmentClasses.size() != 0);
         for (int i = 0; i < _fragmentClasses.size(); i++) {
             if (_fragmentManager.findFragmentByTag(i + "") != null) {
                 _fragments.add(_fragmentManager.findFragmentByTag(i + ""));
@@ -91,11 +86,9 @@ public abstract class BaseFragmentActivity extends BaseActivity {
                 Bundle bundle =new Bundle();
                 bundle.putInt("position",index);
                 fragment.setArguments(bundle);
-                Assert.assertTrue("fragment == null", fragment != null);
                 transaction.add(containerViewId(), fragment, "" + index);
                 _fragments.set(index, fragment);
             } catch (Exception e) {
-                Assert.assertTrue("clazz.newInstance() exception", false);
             }
         } else {
             fragment = _fragmentManager.findFragmentByTag("" + _index);

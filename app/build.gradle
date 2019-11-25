@@ -99,5 +99,4 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47'   //  BaseAdapter
     implementation 'com.lxj:xpopup:1.8.10'                             //  popup
     implementation 'com.blankj:utilcode:1.25.9'                        //  工具类
-    testImplementation 'junit:junit:4.12'
 }

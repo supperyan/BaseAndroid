@@ -342,10 +342,10 @@ public class BaseFragment extends Fragment {
     }
 
     protected View inflateContentView(int resId) {
-        return getLayoutInflater().inflate(resId, _containerLayout, false);
+        return getLayoutInflater1().inflate(resId, _containerLayout, false);
     }
 
-    protected LayoutInflater getLayoutInflater() {
+    public LayoutInflater getLayoutInflater1() {
         return _layoutInflater;
     }
 

@@ -24,11 +24,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by yecal on 2017/2/28.
- * 注册
- */
-
 public class ForgetPasswordActivity extends BaseActivity {
 
     @BindView(R.id.forgetpassword_account)

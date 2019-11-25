@@ -1,6 +1,5 @@
 package com.yecal.qianding.ui.welcome;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -9,10 +8,6 @@ import com.yecal.qianding.base.activity.BaseActivity;
 import com.yecal.qianding.system.DatasStore;
 import com.yecal.qianding.ui.MainActivity;
 import com.yecal.qianding.ui.login.LoginActivity;
-
-/**
- * Created by Administrator on 2018/4/7 0007.
- */
 
 public class SplashActivity extends BaseActivity {
     @Override

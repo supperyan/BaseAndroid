@@ -9,10 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * Created by wfpb on 15/7/6.
- * FragmentActivity
- */
 public abstract class BaseFragmentActivity extends BaseActivity {
 
     protected FragmentManager _fragmentManager;

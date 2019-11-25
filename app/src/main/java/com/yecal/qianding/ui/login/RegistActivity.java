@@ -24,11 +24,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by yecal on 2017/2/28.
- * 注册
- */
-
 public class RegistActivity extends BaseActivity {
 
     @BindView(R.id.regist_account)
@@ -148,7 +143,6 @@ public class RegistActivity extends BaseActivity {
             ToastUtils.showShort("请输入验证码！");
             return;
         }
-
 //        new MemberModel().regist(StringUtil.getEditString(account), StringUtil.getEditString(password), StringUtil.getEditString(phoneCode), new BaseModel.BaseModelIB() {
 //            @Override
 //            public void StartOp() {

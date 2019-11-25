@@ -3,16 +3,16 @@ ext {
     configuration = [
             minSdk           : 16,
             targetSdk        : 22,
-            compileSdk       : 25,
-            buildToolsVersion: '25.0.0',
+            compileSdk       : 28,
+            buildToolsVersion: '28.0.3',
             versionCode      : 1,
             versionName      : '1.0.0',
             applicationId    : 'com.yecal.qianding'
     ]
 
     library = [
-            supportLibrary: '25.1.0',
-            gson          : '2.6.2',
+            supportLibrary: '26.1.0',
+            gson          : '2.8.6',
             butterknife   : '8.5.1',
             glide         : '3.7.0'
     ]
@@ -20,18 +20,23 @@ ext {
 
 buildscript {
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         jcenter()
+        mavenCentral()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:3.5.1'
     }
 }
 
 allprojects {
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         jcenter()
         mavenCentral()
         maven { url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/" }
         maven { url "https://jitpack.io" }
+        google()
     }
 }

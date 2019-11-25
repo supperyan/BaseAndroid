@@ -23,7 +23,7 @@
     </style>
 
     <style name="ThemeSplash" parent="@android:style/Theme.NoTitleBar.Fullscreen">
-        <item name="android:background">@drawable/splash</item>
+        <item name="android:background">@drawable/transparent</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="windowActionBar">false</item>

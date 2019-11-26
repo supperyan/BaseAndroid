@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.yecal.qianding">
+    package="com.yecal.jieyou">
 
     <!-- Required -->
     <permission
-        android:name="com.yecal.qianding.permission.JPUSH_MESSAGE"
+        android:name="com.yecal.jieyou.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
 
     <!-- Required  一些系统要求的权限，如访问网络等-->
-    <uses-permission android:name="com.yecal.qianding.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="com.yecal.jieyou.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -24,19 +24,19 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <!-- Optional for location -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />       <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />         <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />      <!-- 这个权限用于访问GPS定位-->
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <!-- 必选-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取网络状态 -->
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络通信-->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />  <!-- 获取设备信息 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 获取MAC地址-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 读写sdcard，storage等等 -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 允许程序录制音频 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />      <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.INTERNET" />                  <!-- 网络通信-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />          <!-- 获取设备信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />         <!-- 获取MAC地址、用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />              <!-- 允许程序录制音频 -->
 
 
     <!-- 可选-->
@@ -52,15 +52,16 @@
         android:smallScreens="true" />
 
     <application
-        android:name="com.yecal.qianding.system.AppContext"
+        android:name="com.yecal.jieyou.system.AppContext"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        tools:replace="android:name"
         android:theme="@style/AppTheme_Primary_StatusBar">
         <activity
-            android:name="com.yecal.qianding.ui.welcome.SplashActivity"
+            android:name="com.yecal.jieyou.ui.welcome.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/ThemeSplash">
             <intent-filter>
@@ -69,23 +70,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.yecal.qianding.ui.MainActivity"
+            android:name="com.yecal.jieyou.ui.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.yecal.qianding.ui.welcome.WelcomeActivity"
+            android:name="com.yecal.jieyou.ui.welcome.WelcomeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.yecal.qianding.ui.login.LoginActivity"
+            android:name="com.yecal.jieyou.ui.login.LoginActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.yecal.qianding.ui.login.ForgetPasswordActivity"
+            android:name="com.yecal.jieyou.ui.login.ForgetPasswordActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.yecal.qianding.ui.login.RegistActivity"
+            android:name="com.yecal.jieyou.ui.login.RegistActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"></activity>
 
@@ -93,7 +94,7 @@
         <!-- 可配置android:process参数将Service放在其他进程中；android:enabled属性不能是false -->
         <!-- 这个是自定义Service，要继承极光JCommonService，可以在更多手机平台上使得推送通道保持的更稳定 -->
         <service
-            android:name=".jPush.PushService"
+            android:name="com.yecal.jieyou.jPush.PushService"
             android:enabled="true"
             android:exported="false"
             android:process=":pushcore">
@@ -106,14 +107,22 @@
         <!-- 3.3.0开始所有事件将通过该类回调 -->
         <!-- 该广播需要继承 JPush 提供的 JPushMessageReceiver 类, 并如下新增一个 Intent-Filter -->
         <receiver
-            android:name=".jPush.PushMessageReceiver"
+            android:name="com.yecal.jieyou.jPush.PushMessageReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
-                <category android:name="com.yecal.qianding" />
+                <category android:name="com.yecal.jieyou" />
             </intent-filter>
         </receiver>
+        <!--百度地图-->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="uDmqCPqDOoqw9YwUidSSI7vSxmlgyF9e"></meta-data>
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"></service>
     </application>
 
 </manifest>

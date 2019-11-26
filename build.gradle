@@ -7,7 +7,7 @@ ext {
             buildToolsVersion: '28.0.3',
             versionCode      : 1,
             versionName      : '1.0.0',
-            applicationId    : 'com.yecal.qianding'
+            applicationId    : 'com.yecal.jieyou'
     ]
 
     library = [

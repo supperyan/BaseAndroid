@@ -115,22 +115,24 @@
 
             <TextView
                 android:id="@+id/cicle_num_tv"
-                android:layout_width="13dp"
-                android:layout_height="13dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="25dp"
                 android:background="@drawable/shape_main_tab_circle_bg"
                 android:gravity="center"
-                android:padding="3dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:text="0"
                 android:textColor="@color/white"
                 android:textSize="9sp"
                 android:visibility="visible" />
 
         </RelativeLayout>
-
 
         <LinearLayout
             android:id="@+id/tabRL3"

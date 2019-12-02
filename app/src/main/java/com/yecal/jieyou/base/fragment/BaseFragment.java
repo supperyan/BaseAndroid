@@ -17,7 +17,6 @@ import android.widget.TextView;
 import com.blankj.utilcode.util.StringUtils;
 import com.yecal.jieyou.R;
 import com.yecal.jieyou.base.titlebar.NavigationBar;
-import com.yecal.jieyou.utils.AutoUtils;
 import com.yecal.jieyou.utils.LoadingHandler;
 
 import butterknife.ButterKnife;
@@ -121,7 +120,6 @@ public class BaseFragment extends Fragment {
             parent.removeView(view);
         }
         isPrepared = true;
-        AutoUtils.auto(view);
         return view;
     }
 

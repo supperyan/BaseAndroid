@@ -147,7 +147,7 @@ public class NavigationBar extends RelativeLayout {
             mTxtRelease.setText(title);
             Drawable drawable = ContextCompat.getDrawable(getContext(), resid);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-            mTxtRelease.setCompoundDrawables(null,null,drawable, null);
+            mTxtRelease.setCompoundDrawables(null, null, drawable, null);
             mTxtRelease.setVisibility(View.VISIBLE);
             mTxtRelease.setOnClickListener(listener);
         }
@@ -166,9 +166,6 @@ public class NavigationBar extends RelativeLayout {
     public View getmTxtBack() {
         return mIvBack;
     }
-
-
-
 
 
 }

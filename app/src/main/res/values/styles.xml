@@ -42,10 +42,10 @@
     </style>
 
     <style name="progressBarStyleSmall" parent="@android:style/Widget.ProgressBar">
-        <item name="android:maxWidth">48.0dip</item>
-        <item name="android:maxHeight">48.0dip</item>
+        <item name="android:maxWidth">48dip</item>
+        <item name="android:maxHeight">48dip</item>
         <item name="android:indeterminateDrawable">@drawable/progress_bar_interminate</item>
-        <item name="android:minWidth">48.0dip</item>
-        <item name="android:minHeight">48.0dip</item>
+        <item name="android:minWidth">48dip</item>
+        <item name="android:minHeight">48dip</item>
     </style>
 </resources>

@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.multidex.MultiDex;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.uuch.adlibrary.utils.DisplayUtil;
 import com.yecal.jieyou.utils.DataCleanManager;
 import com.yecal.jieyou.utils.MethodsCompat;
 import com.yecal.jieyou.utils.ThreadUtils;
@@ -20,15 +23,27 @@ public class AppContext extends CrashReportingApplication {
     private static final String TAG = AppContext.class.getSimpleName();
     private static AppContext mContext;
 
-
     @Override
     public void onCreate() {
         super.onCreate();
         mContext = this;
         // 工具类初始化
         Utils.init(this);
+        initAd();
         ToastUtils.setBgColor(Color.parseColor("#EEEEEE"));
         ToastUtils.setGravity(Gravity.TOP, 0, 0);
+    }
+
+    private void initAd() {
+        //初始化广告弹框
+        Fresco.initialize(this);
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        DisplayUtil.density = dm.density;
+        DisplayUtil.densityDPI = dm.densityDpi;
+        DisplayUtil.screenWidthPx = dm.widthPixels;
+        DisplayUtil.screenhightPx = dm.heightPixels;
+        DisplayUtil.screenWidthDip = DisplayUtil.px2dip(getApplicationContext(), dm.widthPixels);
+        DisplayUtil.screenHightDip = DisplayUtil.px2dip(getApplicationContext(), dm.heightPixels);
     }
 
     @Override

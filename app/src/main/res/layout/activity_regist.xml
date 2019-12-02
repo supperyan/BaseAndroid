@@ -2,102 +2,105 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="40dp">
 
     <LinearLayout
-        android:layout_width="642px"
-        android:layout_height="87px"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:layout_gravity="center"
-        android:layout_marginTop="50px"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="130px"
+            android:layout_width="60dp"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="账 号"
             android:textColor="#333333"
-            android:textSize="34px" />
+            android:textSize="15sp" />
 
         <com.yecal.jieyou.view.ClearableEditText
             android:id="@+id/regist_account"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/shape_edittext"
+            android:background="@color/white"
             android:gravity="center_vertical"
             android:hint="请输入手机号"
             android:inputType="number"
             android:maxLength="11"
             android:textColorHint="#cfcfcf"
-            android:textSize="32px" />
+            android:textSize="15sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="642px"
-        android:layout_height="87px"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:layout_gravity="center"
-        android:layout_marginTop="25px"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="130px"
-            android:layout_height="40px"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
             android:text="验证码"
             android:textColor="#333333"
-            android:textSize="34px" />
+            android:textSize="15sp" />
 
         <com.yecal.jieyou.view.ClearableEditText
             android:id="@+id/regist_code"
-            android:layout_width="0px"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/shape_edittext"
+            android:background="@color/white"
             android:gravity="center_vertical"
             android:hint="请输入验证码"
             android:inputType="number"
             android:maxLength="6"
             android:textColorHint="#cfcfcf"
-            android:textSize="32px" />
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/regist_get_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="22px"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/shape_getcode"
-            android:padding="17px"
+            android:padding="10dp"
             android:text="获取验证码"
             android:textColor="@color/white"
-            android:textSize="28px" />
+            android:textSize="15sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="642px"
-        android:layout_height="87px"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:layout_gravity="center"
-        android:layout_marginTop="25px"
+        android:layout_marginTop="15dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="130px"
-            android:layout_height="40px"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
             android:text="密  码"
             android:textColor="#333333"
-            android:textSize="34px" />
+            android:textSize="15sp" />
 
         <LinearLayout
-            android:layout_width="0px"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3.5"
-            android:background="@drawable/shape_edittext"
+            android:background="@color/white"
             android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/regist_password"
-                android:layout_width="0px"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
@@ -105,36 +108,36 @@
                 android:hint="请输入密码"
                 android:inputType="textPassword"
                 android:textColorHint="#cfcfcf"
-                android:textSize="32px" />
+                android:textSize="15sp" />
 
             <ImageView
                 android:id="@+id/regist_eye"
-                android:layout_width="50px"
-                android:layout_height="50px"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:padding="6px"
+                android:layout_marginRight="10dp"
+                android:padding="3dp"
                 android:src="@drawable/eye_hide" />
         </LinearLayout>
     </LinearLayout>
 
     <Button
         android:id="@+id/regist_updata"
-        android:layout_width="554px"
-        android:layout_height="80px"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="50px"
-        android:layout_marginRight="50px"
-        android:layout_marginTop="60px"
-        android:background="@drawable/shape_getcode"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/shape_button_comment"
         android:text="注册"
         android:textColor="@color/white"
-        android:textSize="34px" />
+        android:textSize="15sp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="34px"
+        android:layout_height="40dp"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
@@ -143,7 +146,7 @@
             android:layout_height="wrap_content"
             android:text="已有账号，去"
             android:textColor="#999999"
-            android:textSize="30px" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/regist_login"
@@ -151,6 +154,6 @@
             android:layout_height="wrap_content"
             android:text="登录"
             android:textColor="#62b2ea"
-            android:textSize="30px" />
+            android:textSize="14sp" />
     </LinearLayout>
 </LinearLayout>

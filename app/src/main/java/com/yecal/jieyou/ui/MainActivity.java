@@ -7,14 +7,17 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.yecal.jieyou.R;
 import com.yecal.jieyou.base.activity.BaseFragmentActivity;
 import com.yecal.jieyou.base.fragment.BaseFragment;
 import com.yecal.jieyou.jPush.ExampleUtil;
 import com.yecal.jieyou.jPush.LocalBroadcastManager;
 import com.yecal.jieyou.ui.home.HomeFragment;
+import com.yecal.jieyou.ui.home.MineFragment;
 import com.yecal.jieyou.utils.DoubleClickExitUtils;
 
 import java.util.ArrayList;
@@ -28,13 +31,13 @@ import butterknife.OnClick;
 public class MainActivity extends BaseFragmentActivity {
 
     @BindView(R.id.tabRL0)
-    RelativeLayout tabRL0;
+    LinearLayout tabRL0;
     @BindView(R.id.tabRL1)
-    RelativeLayout tabRL1;
+    LinearLayout tabRL1;
     @BindView(R.id.tabRL2)
     RelativeLayout tabRL2;
     @BindView(R.id.tabRL3)
-    RelativeLayout tabRL3;
+    LinearLayout tabRL3;
 
     @BindView(R.id.iv_0)
     ImageView iv_0;
@@ -78,9 +81,9 @@ public class MainActivity extends BaseFragmentActivity {
     protected ArrayList<Class<? extends BaseFragment>> fragmentClasses() {
         fragments = new ArrayList<>();
         fragments.add(HomeFragment.class);
-        fragments.add(HomeFragment.class);
-        fragments.add(HomeFragment.class);
-        fragments.add(HomeFragment.class);
+        fragments.add(MineFragment.class);
+        fragments.add(MineFragment.class);
+        fragments.add(MineFragment.class);
 
         return fragments;
     }
@@ -183,23 +186,20 @@ public class MainActivity extends BaseFragmentActivity {
     public class MessageReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
-            try {
-                if (MESSAGE_RECEIVED_ACTION.equals(intent.getAction())) {
-                    String messge = intent.getStringExtra(KEY_MESSAGE);
-                    String extras = intent.getStringExtra(KEY_EXTRAS);
-                    StringBuilder showMsg = new StringBuilder();
-                    showMsg.append(KEY_MESSAGE + " : " + messge + "\n");
-                    if (!ExampleUtil.isEmpty(extras)) {
-                        showMsg.append(KEY_EXTRAS + " : " + extras + "\n");
-                    }
-                    setCostomMsg(showMsg.toString());
+            if (MESSAGE_RECEIVED_ACTION.equals(intent.getAction())) {
+                String messge = intent.getStringExtra(KEY_MESSAGE);
+                String extras = intent.getStringExtra(KEY_EXTRAS);
+                StringBuilder showMsg = new StringBuilder();
+                showMsg.append(KEY_MESSAGE + " : " + messge + "\n");
+                if (!ExampleUtil.isEmpty(extras)) {
+                    showMsg.append(KEY_EXTRAS + " : " + extras + "\n");
                 }
-            } catch (Exception e){
+                setCostomMsg(showMsg.toString());
             }
         }
     }
 
-    private void setCostomMsg(String msg){
+    private void setCostomMsg(String msg) {
         if (null != cicle_num_tv) {
             cicle_num_tv.setText(msg);
             cicle_num_tv.setVisibility(View.VISIBLE);

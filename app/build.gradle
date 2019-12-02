@@ -107,6 +107,8 @@ dependencies {
     implementation 'com.blankj:utilcode:1.25.9'
     //  简单，强大的广告活动弹窗控件
     implementation 'cn.yipianfengye.android:ad-library:1.0'
+    //  适配
+    implementation 'me.jessyan:autosize:1.1.2'
     //  百度地图
     implementation files('libs/BaiduLBS_Android.jar')
 }

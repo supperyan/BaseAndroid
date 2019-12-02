@@ -20,7 +20,6 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.yecal.jieyou.R;
 import com.yecal.jieyou.base.titlebar.NavigationBar;
 import com.yecal.jieyou.system.AppManager;
-import com.yecal.jieyou.utils.AutoUtils;
 import com.yecal.jieyou.utils.LoadingHandler;
 
 import butterknife.ButterKnife;
@@ -46,7 +45,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected View createView() {
-        AutoUtils.setSize(this, false, 750, 1334);
         _rootView = new LinearLayout(this);
         _rootView.setOrientation(LinearLayout.VERTICAL);
         _rootView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
@@ -80,7 +78,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(this.createView());
-        AutoUtils.auto(this);
         ButterKnife.bind(this);
 
         mContext = this;

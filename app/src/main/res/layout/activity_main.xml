@@ -9,24 +9,33 @@
         android:id="@+id/contentFL"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="98px" />
+        android:layout_marginBottom="48dp" />
 
     <LinearLayout
         android:id="@+id/bottomLl"
         android:layout_width="match_parent"
-        android:layout_height="98px"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="@color/white"
         android:gravity="bottom"
         android:orientation="horizontal">
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/tabRL0"
-            android:layout_width="0px"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/transparent"
+            android:gravity="center"
             android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_0"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/selector_main_tab_0" />
 
             <TextView
                 android:id="@+id/tv_0"
@@ -34,28 +43,28 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10px"
+                android:layout_marginTop="2dp"
                 android:text="首页"
                 android:textColor="@color/selector_main_tab_textcolor"
-                android:textSize="24px" />
+                android:textSize="12sp" />
 
-            <ImageView
-                android:id="@+id/iv_0"
-                android:layout_width="45px"
-                android:layout_height="45px"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="42px"
-                android:src="@drawable/selector_main_tab_0" />
+        </LinearLayout>
 
-        </RelativeLayout>
-
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/tabRL1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/selector_main_tab_1" />
 
             <TextView
                 android:id="@+id/tv_1"
@@ -63,49 +72,12 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10px"
+                android:layout_marginTop="2dp"
                 android:text="推荐"
                 android:textColor="@color/selector_main_tab_textcolor"
-                android:textSize="24px" />
+                android:textSize="12sp" />
 
-            <ImageView
-                android:id="@+id/iv_1"
-                android:layout_width="45px"
-                android:layout_height="45px"
-                android:padding="-3px"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="42px"
-                android:src="@drawable/selector_main_tab_1" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/tabRL4"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10px"
-                android:text="我的"
-                android:textColor="@color/selector_main_tab_textcolor"
-                android:textSize="24px" />
-
-            <ImageView
-                android:id="@+id/iv_4"
-                android:layout_width="45px"
-                android:layout_height="45px"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="42px"
-                android:src="@drawable/selector_main_tab_3" />
-        </RelativeLayout>
+        </LinearLayout>
 
         <RelativeLayout
             android:id="@+id/tabRL2"
@@ -114,50 +86,67 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10px"
-                android:text="协助"
-                android:textColor="@color/selector_main_tab_textcolor"
-                android:textSize="24px" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/iv_2"
-                android:layout_width="45px"
-                android:layout_height="45px"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="42px"
-                android:src="@drawable/selector_main_tab_2" />
+                <ImageView
+                    android:id="@+id/iv_2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/selector_main_tab_2" />
+
+                <TextView
+                    android:id="@+id/tv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="2dp"
+                    android:text="协助"
+                    android:textColor="@color/selector_main_tab_textcolor"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/cicle_num_tv"
-                android:layout_width="35px"
-                android:layout_height="35px"
-                android:layout_alignParentRight="true"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="5px"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="25dp"
                 android:background="@drawable/shape_main_tab_circle_bg"
                 android:gravity="center"
-                android:padding="6px"
+                android:padding="3dp"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="18px"
+                android:textSize="9sp"
                 android:visibility="visible" />
 
         </RelativeLayout>
 
-        <RelativeLayout
+
+        <LinearLayout
             android:id="@+id/tabRL3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/selector_main_tab_3" />
 
             <TextView
                 android:id="@+id/tv_3"
@@ -165,20 +154,12 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10px"
+                android:layout_marginTop="2dp"
                 android:text="我的"
                 android:textColor="@color/selector_main_tab_textcolor"
-                android:textSize="24px" />
+                android:textSize="12sp" />
 
-            <ImageView
-                android:id="@+id/iv_3"
-                android:layout_width="45px"
-                android:layout_height="45px"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="42px"
-                android:src="@drawable/selector_main_tab_3" />
-        </RelativeLayout>
+        </LinearLayout>
 
 
     </LinearLayout>

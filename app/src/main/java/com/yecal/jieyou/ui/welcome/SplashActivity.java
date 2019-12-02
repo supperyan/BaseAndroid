@@ -2,12 +2,12 @@ package com.yecal.jieyou.ui.welcome;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
-import com.blankj.utilcode.util.DeviceUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.yecal.jieyou.R;
 import com.yecal.jieyou.base.activity.BaseActivity;
@@ -15,10 +15,22 @@ import com.yecal.jieyou.system.DatasStore;
 import com.yecal.jieyou.ui.MainActivity;
 import com.yecal.jieyou.ui.login.LoginActivity;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import butterknife.BindView;
+
 public class SplashActivity extends BaseActivity {
+
+    @BindView(R.id.splash_text)
+    TextView text;
 
     private double latitude;
     private double longitude;
+    private String splashText = "趁年轻，搞点事！";
+
+    private int textLength;// 剩下多少秒
 
     @Override
     protected View onCreateContentView() {
@@ -28,30 +40,10 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
         initLocationOption();
+        textLength = splashText.length();
         startApp();
-    }
-
-    private void startApp() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                if (DatasStore.isFirstLaunch()) {
-                    WelcomeActivity.start(SplashActivity.this);
-                } else if (DatasStore.isLogin()) {
-                    MainActivity.start(SplashActivity.this);
-                } else {
-                    LoginActivity.start(SplashActivity.this);
-                }
-                finish();
-            }
-        }).start();
     }
 
     /**
@@ -122,9 +114,46 @@ public class SplashActivity extends BaseActivity {
             String coorType = location.getCoorType();
             //获取定位类型、定位错误返回码，具体信息可参照类参考中BDLocation类中的说明
             int errorCode = location.getLocType();
-            LogUtils.d("百度地图经纬度信息：latitude:" + latitude + "\n" + "longitude:" + longitude+ "\n" + "errorCode:" + errorCode);
-            DeviceUtils.getUniqueDeviceId();
+            LogUtils.d("百度地图经纬度信息：latitude:" + latitude + "\n" + "longitude:" + longitude + "\n" + "errorCode:" + errorCode);
         }
     }
 
+    private void startApp() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    textLength--;
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                EventBus.getDefault().post("1");
+            }
+        }).start();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void Event(String message) {
+        if (textLength <= 0) {
+            if (DatasStore.isFirstLaunch()) {
+                WelcomeActivity.start(SplashActivity.this);
+            } else if (DatasStore.isLogin()) {
+                MainActivity.start(SplashActivity.this);
+            } else {
+                LoginActivity.start(SplashActivity.this);
+            }
+            finish();
+        } else {
+            text.setText(splashText.substring(0, splashText.length() - textLength) + "");
+            startApp();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 }

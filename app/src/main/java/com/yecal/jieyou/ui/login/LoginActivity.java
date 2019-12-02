@@ -70,9 +70,9 @@ public class LoginActivity extends BaseActivity {
                     ToastUtils.showShort("密码输入错误！");
                     return;
                 }
-//                finish();
-//                MainActivity.start(LoginActivity.this);
-                toLogin();
+                finish();
+                MainActivity.start(LoginActivity.this);
+//                toLogin();
                 break;
             case R.id.login_regist:
             case R.id.login_regist_now:
@@ -82,14 +82,12 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void toLogin() {
-        MainActivity.start(LoginActivity.this);
 //        String RegistrationID = JPushInterface.getRegistrationID(LoginActivity.this);
 //        new MemberModel().login(StringUtil.getEditString(account), StringUtil.getEditString(password), RegistrationID, new BaseModel.BaseModelIB() {
 //            @Override
 //            public void StartOp() {
 //                showLoading();
 //            }
-//
 //            @Override
 //            public void successful(Object o) {
 //                hideLoading();

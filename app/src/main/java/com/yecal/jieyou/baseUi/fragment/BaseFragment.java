@@ -1,4 +1,4 @@
-package com.yecal.jieyou.base.fragment;
+package com.yecal.jieyou.baseUi.fragment;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.blankj.utilcode.util.StringUtils;
 import com.yecal.jieyou.R;
-import com.yecal.jieyou.base.titlebar.NavigationBar;
+import com.yecal.jieyou.baseUi.titlebar.NavigationBar;
 import com.yecal.jieyou.utils.LoadingHandler;
 
 import butterknife.ButterKnife;

@@ -9,6 +9,7 @@ import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
@@ -30,6 +31,7 @@ public class AppContext extends CrashReportingApplication {
         // 工具类初始化
         Utils.init(this);
         initAd();
+        SDKInitializer.initialize(this);
         ToastUtils.setBgColor(Color.parseColor("#EEEEEE"));
         ToastUtils.setGravity(Gravity.TOP, 0, 0);
     }

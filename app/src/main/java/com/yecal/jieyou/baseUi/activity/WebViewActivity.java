@@ -1,4 +1,4 @@
-package com.yecal.jieyou.base.activity;
+package com.yecal.jieyou.baseUi.activity;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;

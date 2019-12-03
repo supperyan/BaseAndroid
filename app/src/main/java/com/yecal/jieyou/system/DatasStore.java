@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.google.gson.Gson;
-import com.yecal.jieyou.model.MemberModel;
+import com.yecal.jieyou.basemodel.MemberModel;
 
 import java.lang.reflect.Type;
 

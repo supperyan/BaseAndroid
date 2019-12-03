@@ -1,10 +1,10 @@
-package com.yecal.jieyou.base.activity;
+package com.yecal.jieyou.baseUi.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import com.yecal.jieyou.base.fragment.BaseFragment;
+import com.yecal.jieyou.baseUi.fragment.BaseFragment;
 import java.util.ArrayList;
 import java.util.List;
 

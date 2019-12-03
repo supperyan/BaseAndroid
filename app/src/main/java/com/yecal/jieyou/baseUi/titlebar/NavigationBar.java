@@ -1,4 +1,4 @@
-package com.yecal.jieyou.base.titlebar;
+package com.yecal.jieyou.baseUi.titlebar;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

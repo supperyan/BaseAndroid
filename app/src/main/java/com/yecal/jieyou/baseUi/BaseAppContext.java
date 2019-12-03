@@ -1,4 +1,4 @@
-package com.yecal.jieyou.base;
+package com.yecal.jieyou.baseUi;
 
 import android.support.multidex.MultiDexApplication;
 

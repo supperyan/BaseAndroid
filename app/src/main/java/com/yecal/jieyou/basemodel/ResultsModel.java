@@ -1,7 +1,7 @@
-package com.yecal.jieyou.model;
+package com.yecal.jieyou.basemodel;
 
 import com.google.gson.JsonSyntaxException;
-import com.yecal.jieyou.model.adapter.ThtGosn;
+import com.yecal.jieyou.basemodel.json.ThtGosn;
 
 /**
  * 

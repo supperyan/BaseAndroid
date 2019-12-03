@@ -16,7 +16,7 @@ import com.blankj.utilcode.util.RegexUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.yecal.jieyou.R;
-import com.yecal.jieyou.base.activity.BaseActivity;
+import com.yecal.jieyou.baseUi.activity.BaseActivity;
 import com.yecal.jieyou.utils.StringUtil;
 import com.yecal.jieyou.view.ClearableEditText;
 

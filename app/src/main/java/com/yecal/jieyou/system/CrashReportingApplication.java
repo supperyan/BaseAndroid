@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.yecal.jieyou.base.BaseAppContext;
+import com.yecal.jieyou.baseUi.BaseAppContext;
 
 import java.io.File;
 

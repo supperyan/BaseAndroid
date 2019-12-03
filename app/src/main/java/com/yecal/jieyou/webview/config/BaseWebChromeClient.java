@@ -10,7 +10,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
 import com.yecal.jieyou.R;
-import com.yecal.jieyou.base.activity.BaseWebViewActivity;
+import com.yecal.jieyou.baseUi.activity.BaseWebViewActivity;
 
 import static android.app.Activity.RESULT_OK;
 

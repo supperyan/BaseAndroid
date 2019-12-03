@@ -1,4 +1,4 @@
-package com.yecal.jieyou.base.activity;
+package com.yecal.jieyou.baseUi.activity;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.yecal.jieyou.R;
-import com.yecal.jieyou.base.titlebar.NavigationBar;
+import com.yecal.jieyou.baseUi.titlebar.NavigationBar;
 import com.yecal.jieyou.system.AppManager;
 import com.yecal.jieyou.utils.LoadingHandler;
 

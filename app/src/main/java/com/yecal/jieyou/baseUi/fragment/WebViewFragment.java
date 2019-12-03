@@ -1,4 +1,4 @@
-package com.yecal.jieyou.base.fragment;
+package com.yecal.jieyou.baseUi.fragment;
 
 import android.annotation.TargetApi;
 import android.graphics.Bitmap;

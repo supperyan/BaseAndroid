@@ -1,4 +1,4 @@
-package com.yecal.jieyou.model;
+package com.yecal.jieyou.basemodel;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.NetworkUtils;

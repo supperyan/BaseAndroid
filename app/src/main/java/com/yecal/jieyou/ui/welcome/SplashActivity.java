@@ -10,7 +10,7 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.blankj.utilcode.util.LogUtils;
 import com.yecal.jieyou.R;
-import com.yecal.jieyou.base.activity.BaseActivity;
+import com.yecal.jieyou.baseUi.activity.BaseActivity;
 import com.yecal.jieyou.system.DatasStore;
 import com.yecal.jieyou.ui.MainActivity;
 import com.yecal.jieyou.ui.login.LoginActivity;
@@ -32,6 +32,8 @@ public class SplashActivity extends BaseActivity {
 
     private int textLength;// 剩下多少秒
 
+    private LocationClient locationClient;
+
     @Override
     protected View onCreateContentView() {
         return inflateContentView(R.layout.activity_splash);
@@ -52,7 +54,7 @@ public class SplashActivity extends BaseActivity {
 
     private void initLocationOption() {
         //定位服务的客户端。宿主程序在客户端声明此类，并调用，目前只支持在主线程中启动
-        LocationClient locationClient = new LocationClient(getApplicationContext());
+        locationClient = new LocationClient(getApplicationContext());
         //声明LocationClient类实例并配置定位参数
         LocationClientOption locationOption = new LocationClientOption();
         MyLocationListener myLocationListener = new MyLocationListener();
@@ -61,7 +63,7 @@ public class SplashActivity extends BaseActivity {
         //可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
         locationOption.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);
         //可选，默认gcj02，设置返回的定位结果坐标系，如果配合百度地图使用，建议设置为bd09ll;
-        locationOption.setCoorType("gcj02");
+//        locationOption.setCoorType("bd09ll");
         //可选，默认0，即仅定位一次，设置发起连续定位请求的间隔需要大于等于1000ms才是有效的
         locationOption.setScanSpan(0);
         //可选，设置是否需要地址信息，默认不需要
@@ -153,7 +155,8 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
+        locationClient.stop();
         EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
 }

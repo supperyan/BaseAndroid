@@ -9,10 +9,8 @@ import com.uuch.adlibrary.AdManager;
 import com.uuch.adlibrary.transformer.DepthPageTransformer;
 import com.yecal.jieyou.R;
 import com.uuch.adlibrary.bean.AdInfo;
-import com.yecal.jieyou.base.activity.BaseWebViewActivity;
-import com.yecal.jieyou.base.fragment.BaseFragment;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
+import com.yecal.jieyou.baseUi.activity.BaseWebViewActivity;
+import com.yecal.jieyou.baseUi.fragment.BaseFragment;
 
 import java.util.ArrayList;
 

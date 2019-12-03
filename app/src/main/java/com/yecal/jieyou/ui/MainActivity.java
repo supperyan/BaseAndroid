@@ -12,12 +12,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.yecal.jieyou.R;
-import com.yecal.jieyou.base.activity.BaseFragmentActivity;
-import com.yecal.jieyou.base.fragment.BaseFragment;
+import com.yecal.jieyou.baseUi.activity.BaseFragmentActivity;
+import com.yecal.jieyou.baseUi.fragment.BaseFragment;
 import com.yecal.jieyou.jPush.ExampleUtil;
 import com.yecal.jieyou.jPush.LocalBroadcastManager;
 import com.yecal.jieyou.ui.home.HomeFragment;
-import com.yecal.jieyou.ui.home.MineFragment;
+import com.yecal.jieyou.ui.location.LocationFragment;
+import com.yecal.jieyou.ui.mine.MineFragment;
 import com.yecal.jieyou.utils.DoubleClickExitUtils;
 
 import java.util.ArrayList;
@@ -81,7 +82,7 @@ public class MainActivity extends BaseFragmentActivity {
     protected ArrayList<Class<? extends BaseFragment>> fragmentClasses() {
         fragments = new ArrayList<>();
         fragments.add(HomeFragment.class);
-        fragments.add(MineFragment.class);
+        fragments.add(LocationFragment.class);
         fragments.add(MineFragment.class);
         fragments.add(MineFragment.class);
 

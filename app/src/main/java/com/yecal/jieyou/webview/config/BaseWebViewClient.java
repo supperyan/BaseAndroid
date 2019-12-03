@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.yecal.jieyou.base.activity.BaseWebViewActivity;
+import com.yecal.jieyou.baseUi.activity.BaseWebViewActivity;
 import com.yecal.jieyou.utils.NetWorkUtils;
 
 

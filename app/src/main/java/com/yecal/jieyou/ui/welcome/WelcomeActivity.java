@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.yecal.jieyou.R;
-import com.yecal.jieyou.base.activity.BaseActivity;
+import com.yecal.jieyou.baseUi.activity.BaseActivity;
 import com.yecal.jieyou.system.DatasStore;
 import com.yecal.jieyou.ui.MainActivity;
 import com.yecal.jieyou.ui.login.LoginActivity;

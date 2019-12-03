@@ -1,4 +1,4 @@
-package com.yecal.jieyou.model.adapter;
+package com.yecal.jieyou.basemodel.json;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;

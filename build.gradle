@@ -14,7 +14,7 @@ ext {
             supportLibrary: '27.1.0',
             gson          : '2.8.6',
             butterknife   : '8.5.1',
-            glide         : '3.7.0'
+            glide         : '4.6.1'
     ]
 }
 

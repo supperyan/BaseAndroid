@@ -83,6 +83,7 @@ dependencies {
     implementation "com.android.support:support-v4:${libs.supportLibrary}"
     implementation "com.android.support:appcompat-v7:${libs.supportLibrary}"
     implementation "com.android.support:recyclerview-v7:${libs.supportLibrary}"
+    implementation "com.android.support:design:${libs.supportLibrary}"
     //  图片加载
     implementation "com.github.bumptech.glide:glide:${libs.glide}"
     //  gson解析
@@ -107,6 +108,8 @@ dependencies {
     implementation 'com.blankj:utilcode:1.25.9'
     //  简单，强大的广告活动弹窗控件
     implementation 'cn.yipianfengye.android:ad-library:1.0'
+    //  DiscreteScrollView
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
     //  适配
     implementation 'me.jessyan:autosize:1.1.2'
     //  百度地图

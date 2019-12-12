@@ -4,24 +4,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.baidu.mapapi.map.MapView
-        android:id="@+id/location_map"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/loation_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="@color/white"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/loation_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/white" />
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/location_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/location_icon"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginBottom="40dp"
         android:src="@mipmap/map_location" />
 </RelativeLayout>

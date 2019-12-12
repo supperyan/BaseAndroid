@@ -17,7 +17,7 @@ import com.yecal.jieyou.baseUi.fragment.BaseFragment;
 import com.yecal.jieyou.jPush.ExampleUtil;
 import com.yecal.jieyou.jPush.LocalBroadcastManager;
 import com.yecal.jieyou.ui.home.HomeFragment;
-import com.yecal.jieyou.ui.location.LocationFragment;
+import com.yecal.jieyou.ui.nearby.NearbyFragment;
 import com.yecal.jieyou.ui.mine.MineFragment;
 import com.yecal.jieyou.utils.DoubleClickExitUtils;
 
@@ -82,7 +82,7 @@ public class MainActivity extends BaseFragmentActivity {
     protected ArrayList<Class<? extends BaseFragment>> fragmentClasses() {
         fragments = new ArrayList<>();
         fragments.add(HomeFragment.class);
-        fragments.add(LocationFragment.class);
+        fragments.add(NearbyFragment.class);
         fragments.add(MineFragment.class);
         fragments.add(MineFragment.class);
 

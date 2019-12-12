@@ -1,4 +1,4 @@
-package com.yecal.jieyou.ui.location;
+package com.yecal.jieyou.ui.nearby;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -24,8 +24,8 @@ import com.baidu.mapapi.model.LatLng;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.yecal.jieyou.R;
 import com.yecal.jieyou.baseUi.fragment.BaseFragment;
-import com.yecal.jieyou.ui.location.adapter.LocationAdapter;
-import com.yecal.jieyou.ui.location.model.LocationModel;
+import com.yecal.jieyou.ui.nearby.adapter.LocationAdapter;
+import com.yecal.jieyou.ui.nearby.model.LocationModel;
 
 import java.util.ArrayList;
 
@@ -36,7 +36,7 @@ import butterknife.OnClick;
  * Created by yecal on 2018/5/30.
  */
 
-public class LocationFragment extends BaseFragment {
+public class NearbyFragment extends BaseFragment {
 
     @BindView(R.id.location_map)
     MapView mMapView;
@@ -51,8 +51,8 @@ public class LocationFragment extends BaseFragment {
     private LocationAdapter adapter;
     private ArrayList<LocationModel> models = new ArrayList<>();
 
-    public static LocationFragment getInstance() {
-        LocationFragment fragment = new LocationFragment();
+    public static NearbyFragment getInstance() {
+        NearbyFragment fragment = new NearbyFragment();
         return fragment;
     }
 
@@ -76,6 +76,13 @@ public class LocationFragment extends BaseFragment {
         adapter = new LocationAdapter();
         adapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
         recyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                LocationModel locationModel = (LocationModel) adapter.getData().get(position);
+                UserInfoActivity.start(getActivity(),locationModel.id);
+            }
+        });
     }
 
     private void initData() {
@@ -135,7 +142,7 @@ public class LocationFragment extends BaseFragment {
                     location.getLongitude());
             //构建自己的Marker图标
             BitmapDescriptor bitmap = BitmapDescriptorFactory
-                    .fromResource(R.mipmap.map_tap);
+                    .fromResource(R.mipmap.map_mark);
             //构建MarkerOption，用于在地图上添加Marker
             OverlayOptions option = new MarkerOptions()
                     .position(latLng)
@@ -176,7 +183,7 @@ public class LocationFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.location_icon:
-
+                mLocationClient.start();
                 break;
         }
     }

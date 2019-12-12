@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#2d3136</color>
-    <color name="colorPrimaryDark">#2d3136</color>
-    <color name="colorAccent">#2d3136</color>
+    <color name="colorPrimaryDark">#EEEEEE</color>
+    <color name="colorAccent">#EEEEEE</color>
 
 
     <color name="text_msg_33">#333333</color>
@@ -16,4 +16,8 @@
     <color name="color_unselected">#666666</color>
     <color name="transparent">#00000000</color>
     <color name="color_f34c1b">#f34c1b</color>
+    <color name="shopAccent">#84ceca</color>
+    <color name="shopRatedStar">#ffeb5a</color>
+    <color name="shopSecondary">#727272</color>
+    <color name="shopFabRipple">#51b2ac</color>
 </resources>

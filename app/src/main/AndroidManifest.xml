@@ -89,6 +89,14 @@
             android:name="com.yecal.jieyou.ui.login.RegistActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.yecal.jieyou.ui.nearby.UserInfoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.yecal.jieyou.ui.home.TaskActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"></activity>
 
         <!-- Since JCore2.0.0 Required SDK核心功能-->
         <!-- 可配置android:process参数将Service放在其他进程中；android:enabled属性不能是false -->

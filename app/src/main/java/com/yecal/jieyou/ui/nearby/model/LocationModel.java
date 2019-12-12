@@ -1,4 +1,4 @@
-package com.yecal.jieyou.ui.location.model;
+package com.yecal.jieyou.ui.nearby.model;
 
 import com.yecal.jieyou.basemodel.BaseModel;
 

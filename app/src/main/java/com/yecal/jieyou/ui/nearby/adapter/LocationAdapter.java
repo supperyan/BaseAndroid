@@ -1,12 +1,9 @@
-package com.yecal.jieyou.ui.location.adapter;
+package com.yecal.jieyou.ui.nearby.adapter;
 
-import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.yecal.jieyou.R;
-import com.yecal.jieyou.ui.location.model.LocationModel;
+import com.yecal.jieyou.ui.nearby.model.LocationModel;
 
 public class LocationAdapter extends BaseQuickAdapter<LocationModel, BaseViewHolder> {
 

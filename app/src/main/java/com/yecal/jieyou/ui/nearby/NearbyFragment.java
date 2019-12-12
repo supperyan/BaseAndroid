@@ -80,7 +80,7 @@ public class NearbyFragment extends BaseFragment {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 LocationModel locationModel = (LocationModel) adapter.getData().get(position);
-                UserInfoActivity.start(getActivity(),locationModel.id);
+                UserInfoActivity.start(getActivity(), locationModel.id);
             }
         });
     }
@@ -100,9 +100,9 @@ public class NearbyFragment extends BaseFragment {
     private void initMap() {
         mBaiduMap = mMapView.getMap();
         //显示卫星图层
-        mBaiduMap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
-//        //显示普通图层
-//        mBaiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
+//        mBaiduMap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
+        //显示普通图层
+        mBaiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
         mBaiduMap.setMyLocationEnabled(true);
         //定位初始化
         mLocationClient = new LocationClient(getActivity());

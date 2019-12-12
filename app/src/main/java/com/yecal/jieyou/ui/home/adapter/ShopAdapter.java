@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.yecal.jieyou.R;
@@ -36,6 +37,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
         Glide.with(holder.itemView.getContext())
                 .load(data.get(position).getImage())
                 .into(holder.image);
+        holder.top.setText((position + 1) + "");
     }
 
     @Override
@@ -46,10 +48,12 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
     class ViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView image;
+        private TextView top;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            image = (ImageView) itemView.findViewById(R.id.image);
+            image = (ImageView) itemView.findViewById(R.id.item_task_image);
+            top = (TextView) itemView.findViewById(R.id.item_task_top);
         }
     }
 }

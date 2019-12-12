@@ -28,7 +28,7 @@ public class SplashActivity extends BaseActivity {
 
     private double latitude;
     private double longitude;
-    private String splashText = "趁年轻，搞点事！";
+    private String splashText = "趁年轻，搞事情！";
 
     private int textLength;// 剩下多少秒
 

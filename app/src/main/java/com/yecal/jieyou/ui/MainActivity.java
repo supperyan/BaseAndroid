@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.pgyersdk.update.PgyUpdateManager;
+import com.vector.update_app.UpdateAppManager;
 import com.yecal.jieyou.R;
 import com.yecal.jieyou.baseUi.activity.BaseFragmentActivity;
 import com.yecal.jieyou.baseUi.fragment.BaseFragment;
@@ -100,7 +102,22 @@ public class MainActivity extends BaseFragmentActivity {
         registerMessageReceiver();  // used for receive msg
         enableTabItem(0);
         duClickExitHelper = new DoubleClickExitUtils(this);
+        updateApp();
+    }
 
+    private void updateApp() {
+        new PgyUpdateManager.Builder()
+                .register();
+//        new UpdateAppManager
+//                .Builder()
+//                //当前Activity
+//                .setActivity(this)
+//                //更新地址
+//                .setUpdateUrl(mUpdateUrl)
+//                //实现httpManager接口的对象
+//                .setHttpManager(new UpdateAppHttpUtil())
+//                .build()
+//                .update();
     }
 
     public void registerMessageReceiver() {

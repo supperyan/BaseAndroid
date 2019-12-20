@@ -110,8 +110,14 @@ dependencies {
     implementation 'cn.yipianfengye.android:ad-library:1.0'
     //  DiscreteScrollView
     implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
+    //  微信
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
     //  适配
     implementation 'me.jessyan:autosize:1.1.2'
+    //  自动更新
+    implementation 'com.qianwen:update-app:3.5.2'
+    //  蒲公英
+    implementation 'com.pgyersdk:sdk:3.0.10'
     //  百度地图
     implementation files('libs/BaiduLBS_Android.jar')
 }

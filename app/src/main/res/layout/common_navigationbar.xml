@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nav_bar_bg"
     android:layout_width="match_parent"
-    android:layout_height="48dp"
-    android:background="@color/colorAccent"
+    android:layout_height="45dp"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <ImageView
@@ -18,15 +18,14 @@
 
     <TextView
         android:id="@+id/nav_bar_title"
+        style="@style/nav_bar_text_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:ellipsize="end"
         android:maxWidth="300dp"
         android:maxLines="1"
-        android:text="标题"
-        android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:text="TITLE" />
 
     <ImageView
         android:id="@+id/iv_left_image"

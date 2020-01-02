@@ -45,7 +45,7 @@ public class RegistActivity extends BaseActivity {
         setTitle("注册");
         registerBack();
     }
-
+    
     @Override
     protected View onCreateContentView() {
         return inflateContentView(R.layout.activity_regist);

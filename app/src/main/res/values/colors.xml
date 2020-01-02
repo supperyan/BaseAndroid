@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2d3136</color>
-    <color name="colorPrimaryDark">#EEEEEE</color>
-    <color name="colorAccent">#EEEEEE</color>
+    <color name="colorPrimary">#9BCEBF</color>
+    <color name="colorPrimaryDark">#9BCEBF</color>
+    <color name="colorAccent">#E2F2F6</color>
 
 
-    <color name="text_msg_33">#333333</color>
+    <color name="text_33">#333333</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="cacheColorHint">#00000000</color>
     <color name="app_style_color">#F5F5F5</color>
     <color name="order_normal_color">#e6e9ef</color>
-    <color name="bg_color">#F5F5F5</color>
+    <color name="bg_color">#E2F2F6</color>
     <color name="color_selected">#febd32</color>
     <color name="color_unselected">#666666</color>
     <color name="transparent">#00000000</color>

@@ -12,8 +12,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/loation_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:background="@color/white" />
+            android:layout_height="120dp" />
 
         <com.baidu.mapapi.map.MapView
             android:id="@+id/location_map"

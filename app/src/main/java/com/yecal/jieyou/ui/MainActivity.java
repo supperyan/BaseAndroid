@@ -128,11 +128,6 @@ public class MainActivity extends BaseFragmentActivity {
         LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver, filter);
     }
 
-    public static void into(Context context) {
-        Intent starter = new Intent(context, MainActivity.class);
-        context.startActivity(starter);
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

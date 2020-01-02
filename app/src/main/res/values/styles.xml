@@ -1,8 +1,6 @@
 <resources>
 
     <style name="AppTheme_Primary_StatusBar" parent="AppTheme">
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
-        <item name="android:windowBackground">@color/bg_color</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowIsTranslucent">false</item>
         <item name="android:windowEnableSplitTouch">false</item>
@@ -15,11 +13,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/bg_color</item>
     </style>
 
     <style name="nav_bar_text_style">
-        <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/text_msg_33</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="ThemeSplash" parent="@android:style/Theme.NoTitleBar.Fullscreen">

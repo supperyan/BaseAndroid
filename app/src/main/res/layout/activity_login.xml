@@ -30,7 +30,7 @@
             android:hint="请输入手机号"
             android:inputType="number"
             android:maxLength="11"
-            android:text="18509291470"
+            android:text=""
             android:textColorHint="#999999"
             android:textSize="15sp" />
     </LinearLayout>
@@ -67,7 +67,7 @@
             android:gravity="center_vertical"
             android:hint="请输入密码"
             android:inputType="textPassword"
-            android:text="123456"
+            android:text=""
             android:textColorHint="#999999"
             android:textSize="15sp" />
     </LinearLayout>

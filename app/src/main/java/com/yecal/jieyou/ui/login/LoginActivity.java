@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.RegexUtils;
+import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.yecal.jieyou.R;
@@ -53,6 +54,12 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("登录");
+        if (!StringUtils.isEmpty(SPUtils.getInstance().getString("account"))) {
+            account.setText(SPUtils.getInstance().getString("account"));
+        }
+        if (!StringUtils.isEmpty(SPUtils.getInstance().getString("password"))) {
+            password.setText(SPUtils.getInstance().getString("password"));
+        }
     }
 
     @OnClick({R.id.login_forgetpassword, R.id.login_login, R.id.login_regist, R.id.login_regist_now})
@@ -71,6 +78,8 @@ public class LoginActivity extends BaseActivity {
                     return;
                 }
                 finish();
+                SPUtils.getInstance().put("account", StringUtil.getEditString(account));
+                SPUtils.getInstance().put("password", StringUtil.getEditString(password));
                 MainActivity.start(LoginActivity.this);
 //                toLogin();
                 break;

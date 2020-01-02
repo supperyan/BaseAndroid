@@ -5,14 +5,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ToastUtils;
+import com.blankj.utilcode.util.VibrateUtils;
 import com.pgyersdk.update.PgyUpdateManager;
-import com.vector.update_app.UpdateAppManager;
 import com.yecal.jieyou.R;
 import com.yecal.jieyou.baseUi.activity.BaseFragmentActivity;
 import com.yecal.jieyou.baseUi.fragment.BaseFragment;
@@ -21,7 +23,6 @@ import com.yecal.jieyou.jPush.LocalBroadcastManager;
 import com.yecal.jieyou.ui.home.HomeFragment;
 import com.yecal.jieyou.ui.nearby.NearbyFragment;
 import com.yecal.jieyou.ui.mine.MineFragment;
-import com.yecal.jieyou.utils.DoubleClickExitUtils;
 
 import java.util.ArrayList;
 
@@ -63,7 +64,8 @@ public class MainActivity extends BaseFragmentActivity {
     @BindView(R.id.cicle_num_tv)
     TextView cicle_num_tv;
 
-    private DoubleClickExitUtils duClickExitHelper;
+    //记录用户首次点击返回键的时间
+    private long firstTime = 0;
 
     public static boolean isForeground = false;
     //for receive customer msg from jpush server
@@ -101,7 +103,6 @@ public class MainActivity extends BaseFragmentActivity {
         super.onCreate(savedInstanceState);
         registerMessageReceiver();  // used for receive msg
         enableTabItem(0);
-        duClickExitHelper = new DoubleClickExitUtils(this);
         updateApp();
     }
 
@@ -219,4 +220,20 @@ public class MainActivity extends BaseFragmentActivity {
         }
     }
 
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+            long secondTime = System.currentTimeMillis();
+            if (secondTime - firstTime > 1000) {
+                VibrateUtils.vibrate(100);
+                ToastUtils.showShort("再按一次退出程序");
+                firstTime = secondTime;
+                return true;
+            } else {
+                System.exit(0);
+            }
+        }
+
+        return super.onKeyUp(keyCode, event);
+    }
 }

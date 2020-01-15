@@ -3,7 +3,6 @@ package com.yecal.jieyou.ui.mine;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
-
 import com.yecal.jieyou.R;
 import com.yecal.jieyou.baseUi.fragment.BaseFragment;
 
@@ -19,11 +18,15 @@ public class MineFragment extends BaseFragment {
     }
 
     protected View onCreateContentView() {
-        return inflateContentView(R.layout.fragment_home);
+        return inflateContentView(R.layout.fragment_mine);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        initView();
+    }
+
+    private void initView() {
     }
 }

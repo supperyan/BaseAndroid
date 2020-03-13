@@ -32,11 +32,17 @@ android {
     }
 
     signingConfigs {
+        debug {
+            storeFile file('../app/release.jks')
+            storePassword 'yanchao'
+            keyAlias 'freeGang'
+            keyPassword 'yanchao'
+        }
         release {
-            storeFile file('E:/release.jks')
-            storePassword 'android'
-            keyAlias 'jieyou'
-            keyPassword 'android'
+            storeFile file('../app/release.jks')
+            storePassword 'yanchao'
+            keyAlias 'freeGang'
+            keyPassword 'yanchao'
         }
     }
     dexOptions {
@@ -118,8 +124,6 @@ dependencies {
     implementation 'me.jessyan:autosize:1.1.2'
     //  自动更新
     implementation 'com.qianwen:update-app:3.5.2'
-    //  蒲公英
-    implementation 'com.pgyersdk:sdk:3.0.10'
     //  百度地图
     implementation files('libs/BaiduLBS_Android.jar')
 }

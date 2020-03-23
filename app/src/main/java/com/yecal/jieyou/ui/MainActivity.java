@@ -1,9 +1,7 @@
 package com.yecal.jieyou.ui;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -11,21 +9,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.VibrateUtils;
-import com.pgyersdk.update.PgyUpdateManager;
 import com.yecal.jieyou.R;
 import com.yecal.jieyou.baseUi.activity.BaseFragmentActivity;
 import com.yecal.jieyou.baseUi.fragment.BaseFragment;
-import com.yecal.jieyou.jPush.ExampleUtil;
-import com.yecal.jieyou.jPush.LocalBroadcastManager;
 import com.yecal.jieyou.ui.home.HomeFragment;
 import com.yecal.jieyou.ui.nearby.NearbyFragment;
 import com.yecal.jieyou.ui.mine.MineFragment;
-
 import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -68,12 +60,6 @@ public class MainActivity extends BaseFragmentActivity {
     private long firstTime = 0;
 
     public static boolean isForeground = false;
-    //for receive customer msg from jpush server
-    private MessageReceiver mMessageReceiver;
-    public static final String MESSAGE_RECEIVED_ACTION = "com.example.jpushdemo.MESSAGE_RECEIVED_ACTION";
-    public static final String KEY_TITLE = "title";
-    public static final String KEY_MESSAGE = "message";
-    public static final String KEY_EXTRAS = "extras";
 
     private ArrayList<Class<? extends BaseFragment>> fragments;
 
@@ -101,14 +87,11 @@ public class MainActivity extends BaseFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        registerMessageReceiver();  // used for receive msg
         enableTabItem(0);
         updateApp();
     }
 
     private void updateApp() {
-        new PgyUpdateManager.Builder()
-                .register();
 //        new UpdateAppManager
 //                .Builder()
 //                //当前Activity
@@ -121,18 +104,9 @@ public class MainActivity extends BaseFragmentActivity {
 //                .update();
     }
 
-    public void registerMessageReceiver() {
-        mMessageReceiver = new MessageReceiver();
-        IntentFilter filter = new IntentFilter();
-        filter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
-        filter.addAction(MESSAGE_RECEIVED_ACTION);
-        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver, filter);
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(mMessageReceiver);
     }
 
     public void enableTabItem(int position) {
@@ -195,29 +169,6 @@ public class MainActivity extends BaseFragmentActivity {
     public static void start(Context context) {
         Intent starter = new Intent(context, MainActivity.class);
         context.startActivity(starter);
-    }
-
-    public class MessageReceiver extends BroadcastReceiver {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (MESSAGE_RECEIVED_ACTION.equals(intent.getAction())) {
-                String messge = intent.getStringExtra(KEY_MESSAGE);
-                String extras = intent.getStringExtra(KEY_EXTRAS);
-                StringBuilder showMsg = new StringBuilder();
-                showMsg.append(KEY_MESSAGE + " : " + messge + "\n");
-                if (!ExampleUtil.isEmpty(extras)) {
-                    showMsg.append(KEY_EXTRAS + " : " + extras + "\n");
-                }
-                setCostomMsg(showMsg.toString());
-            }
-        }
-    }
-
-    private void setCostomMsg(String msg) {
-        if (null != cicle_num_tv) {
-            cicle_num_tv.setText(msg);
-            cicle_num_tv.setVisibility(View.VISIBLE);
-        }
     }
 
     @Override
